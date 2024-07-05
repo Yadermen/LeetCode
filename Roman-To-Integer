@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Домашние_Задания
+namespace LeetCode
 {
     internal class Program
     {
