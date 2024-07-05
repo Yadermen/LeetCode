@@ -1,0 +1,43 @@
+using System;
+namespace LeetCode
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+        }
+
+    }
+    public class Solution
+    {
+        public bool IsPalindrome(int x)
+        {
+            string X = Convert.ToString(x);
+            string X2 = "";
+
+
+            for (int i = X.Length - 1; i >= 0; i--)
+            {
+                X2 += X[i];
+            }
+
+            if (X == X2)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+
+
+
+
+
+}
