@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Домашние_Задания
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = RomanToInt("MCMXCIV");
+            Console.ReadKey();
+
+        }
+        static int RomanToInt(string s)
+        {
+            string INT = "";
+            string INT2;
+            int result = 0;
+            Roman roman;
+            int j = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                string Int3 = Convert.ToString(s[i]);
+
+                j++;
+                if (j<=s.Length-1)
+                {
+                Int3 += s[j];
+
+                }
+                else
+                {
+                    Int3 += s[i];
+                }
+                if (Enum.IsDefined(typeof(Roman), Int3))
+                {
+                    roman = (Roman)Enum.Parse(typeof(Roman), Int3, ignoreCase: true);
+                    result += (int)roman;
+                    i++;
+                    j++;
+                }
+                else
+                {
+                    INT += s[i];
+                }
+
+
+
+
+            }
+
+            for (int k = 0; k < INT.Length; k++)
+            {
+                INT2 = Convert.ToString(INT[k]);
+                roman = (Roman)Enum.Parse(typeof(Roman), INT2, ignoreCase: true);
+
+
+                result += (int)roman;
+            }
+
+
+            return result;
+        }
+        enum Roman
+        {
+            I = 1,
+            IV = 4,
+            V = 5,
+            IX = 9,
+            X = 10,
+            XL = 40,
+            L = 50,
+            XC = 90,
+            C = 100,
+            CD = 400,
+            D = 500,
+            CM = 900,
+            M = 1000
+        }
+
+    }
+}
+
