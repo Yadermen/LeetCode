@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+namespace NTestProject
+{
+    internal class Program
+    {
+
+        private static void Main(string[] args)
+        {
+            Random rand = new Random();
+            int tries, eagle = 0, tails = 0;
+            while (true)
+            {
+                eagle = 0;
+                tails = 0;
+
+                Console.WriteLine("Сколько раз вы хотите подбросить монету?");
+                tries = int.Parse(Console.ReadLine());
+                for (int i = 0; i < tries; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        Console.Clear();
+                        if (rand.Next(0, 2) == 0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Орел\n");
+                            Thread.Sleep(500);
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Решка");
+                            Thread.Sleep(500);
+                        }
+                    }
+                    Console.Clear();
+                    if (rand.Next(0, 2) == 0)
+                    {
+                        Console.WriteLine("Выпал Орел!");
+                        Console.ReadKey();
+                        eagle++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Выпала Решка");
+                        Console.ReadKey();
+                        tails++;
+                    }
+                }
+                    Console.Clear();
+                    if (tails<eagle)
+                    {
+                        Console.WriteLine("Победил Орел! ");
+                        Console.WriteLine($"Счет:\n\nОрел: {eagle}  Решка: {tails}");
+                        Console.WriteLine($"Сделано попыток: {tries}");
+                        Console.ReadKey();
+                    }
+                    else if(tails>eagle)
+                    {
+                        Console.WriteLine("Победил Решка! ");
+                        Console.WriteLine($"Счет:\n\nОрел: {eagle}  Решка: {tails}");
+                        Console.WriteLine($"\nСделано попыток: {tries}");
+                        Console.ReadKey();
+                    }
+
+
+            }
+
+        }
+
+
+
+
+
+    }
+}
