@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+namespace NTestProject
+{
+    internal class Program
+    {
+
+        private static void Main(string[] args)
+        {
+            string text, secretText = "";
+            int countSymbols = 0;
+            bool isWork = true;
+            while (true)
+            {
+                Console.Clear();
+                secretText = "";
+                countSymbols = 0;
+                isWork = true;
+                Console.WriteLine("Введите текст");
+                text = Console.ReadLine() ?? "";
+                    for (int j = 0; j < text.Length&&isWork; j++)
+                    {
+                        switch (text[j])
+                        {
+                            case 'a':
+                                isWork = false;
+                                break;
+                            case 'y':
+                                isWork = false;
+                                break;
+                            case 'e':
+                                isWork = false;
+                                break;
+                            case 'i':
+                                isWork = false;
+                                break;
+                            case 'o':
+                                isWork = false;
+                                break;
+                            case 'u':
+                                isWork = false;
+                                break;
+                            default:
+                                countSymbols++;
+                                break;
+                        }
+                    }
+                for (int i = countSymbols ; i < text.Length; i++)
+                {
+
+                    secretText += text[i];
+                }
+                secretText += "-";
+                for (int i = 0; i < countSymbols; i++)
+                    secretText += text[i];
+
+                secretText += "ay";
+                Console.Clear();
+                Console.WriteLine($"Введен: {text}\n\nПолученно:{secretText}");
+                Console.ReadKey();
+            }
+
+
+
+
+        }
+
+
+
+
+
+    }
+}
