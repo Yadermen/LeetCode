@@ -1,0 +1,29 @@
+using System;
+namespace NTestProject
+{
+    internal class Program
+    {
+
+        private static void Main(string[] args)
+        {
+            while (true)
+            {
+
+            string text, newText = "";
+            Console.Write("Введите текст: ");
+            text = Console.ReadLine();
+            for (int i = text.Length-1; i >= 0; i--)
+            {
+                newText += text[i];
+            }
+            bool result = text == newText;
+                Console.WriteLine(newText);
+                Console.WriteLine(result);
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+    }
+
+
+}
